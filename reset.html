@@ -1,0 +1,48 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA compatible" content="IE=edge">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <script src="https://kit.fontawesome.com/d18c82805a.js" crossorigin="anonymous"></script>
+    <title>reset password</title>
+    </head>
+    <body>
+        <div class="container">
+     <form onsubmit="sendEmail();reset();return false;"> 
+    <h2 >Reset Password</h2>
+    
+        <i class="fa-regular fa-envelope"></i> 
+        <input type="email" id="email"placeholder="email"required>
+    <br>
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" id="password"placeholder="password"required>
+    <br>
+    <button type="submit">send</button>
+    <br>
+     <p><a href="login.html">back to login</a>
+    </p>
+</form>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function SendEmail(){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "jumacynthia329@gmail.com",
+        Password : "",
+        To : 'jumacynthia329@gmail.com',
+        From :document.getElementaryById("email").value,
+        Subject : "New Contact Form Enquiry",
+        Body : "Name:"+document.getElementaryById("name").value
+        +"<br>email"+document.getElementaryById("email").value
+        +"<br>Phone no"+document.getElementaryById("phone").value
+        +"<br>Message"+document.getElementaryById("message").value
+    }).then(
+        message => alert("we have sent you an email")
+    );
+}
+</script>
+</body>
+</html>

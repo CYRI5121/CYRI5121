@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA compatible" content="IE=edge">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="about.css">
+        <script src="https://kit.fontawesome.com/d18c82805a.js" crossorigin="anonymous"></script>
+    <title>CYRI FOODS
+    </title>
+</head>
+<body>
+    <h2>About Us</h2>
+       <p>CYRI FOODS is a Nairobi based food delivery and recipes company dedicated to providing delicious meals and recipes to our customers. Our experienced chefs and food enthusiast work tirelessly to create mouth-watering recipes and deliver them to your doorstep.<br>Our platform also features recipes for different foods,making it easy to prepare delicious meals.Trust us to provide quality food products and recipes that will satisfy your taste buds!</p>
+     <div class="image">
+    <img src="C:\Users\training1\Documents\images\chinese rice 1.jpg"width="550"height="400">
+        </div>
+    <h3> Get in Touch Today</h3>
+        <p>Have questions,comments or feedback? fill out the form below and we'll get back to you as soon as possible.<br> We value your input and look forward to hearing from you.</p>
+       <div class="container">
+         <form onsubmit="sendEmail();reset();return false;">   
+         <i class="fa-solid fa-user"></i> 
+        <input type="text" id="name"placeholder="Fullname"required>
+        <i class="fa-regular fa-envelope"></i> 
+        <input type="email" id="email"placeholder="Email id"required>
+        <i class="fa-solid fa-phone-volume"></i> 
+        <input type="text" id="phone"placeholder="Phone no"required>
+        <textarea id="message"rows="4"placeholder="How can we help?"></textarea>
+        <button type="submit">Send</button>
+        </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+        function SendEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "jumacynthia329@gmail.com",
+                Password : "",
+                To : 'jumacynthia329@gmail.com',
+                From :document.getElementaryById("email").value,
+                Subject : "New Contact Form Enquiry",
+                Body : "Name:"+document.getElementaryById("name").value
+                +"<br>email"+document.getElementaryById("email").value
+                +"<br>Phone no"+document.getElementaryById("phone").value
+                +"<br>Message"+document.getElementaryById("message").value
+            }).then(
+                message => alert("message sent succesfully")
+            );
+    }
+    </script>
+       </body>
+</html>
