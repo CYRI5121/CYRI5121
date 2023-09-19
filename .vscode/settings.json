@@ -1,0 +1,6 @@
+{
+    "debug.confirmOnExit": "always",
+    "debug.console.acceptSuggestionOnEnter": "on",
+    "debug.console.closeOnEnd": true,
+    "debug.openExplorerOnEnd": true
+}
